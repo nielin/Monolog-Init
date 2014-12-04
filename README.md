@@ -15,6 +15,7 @@ Helps create the following handler
 - HipChat
 - PushOver
 - ZendMonitor
+- Stream
 
 from 2 strings : `<handlerName>` `<comma-separated list of arguments>`
 
