@@ -98,6 +98,12 @@ class MonologInit
         return $reflect->newInstanceArgs($args);
     }
 
+    public function initStreamHandler($args)
+    {
+        $reflect  = new \ReflectionClass('\Monolog\Handler\StreamHandler');
+        return $reflect->newInstanceArgs($args);
+    }
+
     public function initChromePHPHandler($args)
     {
         $reflect  = new \ReflectionClass('\Monolog\Handler\ChromePHPHandler');
