@@ -26,7 +26,7 @@ class MonologInit
     public $target = null;
     protected $instance = null;
 
-    const VERSION = '0.1.1';
+    const VERSION = '0.2.0';
 
 
     public function __construct($handler = false, $target = false)
@@ -98,6 +98,10 @@ class MonologInit
         return $reflect->newInstanceArgs($args);
     }
 
+    /**
+     *
+     * @since 0.2.0
+     */
     public function initStreamHandler($args)
     {
         $reflect  = new \ReflectionClass('\Monolog\Handler\StreamHandler');
