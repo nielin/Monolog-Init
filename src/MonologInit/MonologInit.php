@@ -26,7 +26,7 @@ class MonologInit
     public $target = null;
     protected $instance = null;
 
-    const VERSION = '0.2.0';
+    const VERSION = '0.2.1';
 
 
     public function __construct($handler = false, $target = false)
@@ -86,13 +86,17 @@ class MonologInit
         }
     }
 
+    /**
+     *
+     * @since 0.2.1
+     */
     public function initRedisHandler($args) {
         $reflect  = new \ReflectionClass('\Monolog\Handler\RedisHandler');
         $redis = new \Redis();
         $redis->connect(array_shift($args));
         array_unshift($args, $redis);
         return $reflect->newInstanceArgs($args);
-    } 
+    }
 
     public function initCubeHandler($args)
     {

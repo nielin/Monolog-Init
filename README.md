@@ -16,6 +16,7 @@ Helps create the following handler
 - PushOver
 - ZendMonitor
 - Stream
+- Redis
 
 from 2 strings : `<handlerName>` `<comma-separated list of arguments>`
 
@@ -28,17 +29,17 @@ Download and include the MonologInit class in your code, or install it via Compo
 Usage example :
 
 	$logger = new MonologInit('Cube', 'udp://127.0.0.1:1080');
-		
+
 To pass more than one parameter, separate them with a comma
 
 	$logger = new MonologInit('Cube', 'udp://127.0.0.1:1080,0,1');
 
-		
+
 And use it like that :
 
 	$logger->getInstance()->addInfo('hi ! This is my first log');
-		
-		
+
+
 ## Where to use
 
 This container is usefull for creating remote log, for instance via CLI, where you can't pass object.
