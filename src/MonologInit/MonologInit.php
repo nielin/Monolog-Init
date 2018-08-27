@@ -141,7 +141,7 @@ class MonologInit
     public function initMongoDBHandler($args)
     {
         $reflect  = new \ReflectionClass('\Monolog\Handler\MongoDBHandler');
-        $mongo = new \Mongo(array_shift($args));
+        $mongo = new \MongoDB\Client(array_shift($args), ['ssl' => MONGODB_ENABLE_SSL]);
         array_unshift($args, $mongo);
         return $reflect->newInstanceArgs($args);
     }
@@ -189,4 +189,3 @@ class MonologInit
         return $reflect->newInstanceArgs($args);
     }
 }
-
